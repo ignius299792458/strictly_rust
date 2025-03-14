@@ -8,8 +8,10 @@ fn main() {
     // Mutable borrow (note: you can only have one mutable borrow at a time)
     let mut s2 = String::from("hello");
     change(&mut s2);
-    change(&mut s2);
     println!("{}", s2); // Prints "hello, world"
+    change(&mut s2);
+    println!("{}", s2); // Prints: "hello, world, world"
+
 }
 
 fn calculate_length(s: &String) -> usize {
