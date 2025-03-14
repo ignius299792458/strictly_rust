@@ -1,4 +1,4 @@
-## Memory Management in rust
+## Memory Management and Lifetimes in rust
 
 Scopes are used frequently in Rust for:
 
