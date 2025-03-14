@@ -6,19 +6,19 @@ fn main() {
     //     Some(name) => println!("Found user: {name}"),
     //     None => println!("No user found"),
     // }
-    
+
     // method 2: to handle Option<T> return
     // If let is a cleaner way to handle a single pattern
     if let Some(name) = username {
         println!("User name: {}", name);
     }
-    
+
     // Result<T, E> is used for error handling
     match divide(10.0, 2.0) {
         Ok(result) => println!("10 / 2 = {}", result),
         Err(e) => println!("Error: {}", e),
     }
-    
+
     // The ? operator can be used to propagate errors (in functions that return Result)
     let result = calculate().unwrap_or_else(|err| {
         println!("Calculation error: {}", err);
