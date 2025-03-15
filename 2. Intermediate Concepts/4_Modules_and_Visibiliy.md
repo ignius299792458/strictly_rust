@@ -322,6 +322,3 @@ The flat approach avoids having multiple files named `mod.rs`, which can be conf
 2. **Control your public API**: Only make items public that users need
 3. **Prefer composition over inheritance**: Use modules to compose functionality
 4. **Use descriptive names**: Module names should clearly indicate their purpose
-5. **Maintain a clean hierarchy**: Don't make modules too deeply nested
-
-Would you like me to elaborate on any specific aspect of modules and visibility in Rust?
