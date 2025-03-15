@@ -1,10 +1,17 @@
 # Macros in Rust: Declarative and Procedural
 
-Macros in Rust are powerful tools for metaprogramming, allowing you to write code that writes code. Rust has two main types of macros: declarative macros (also known as "macro_rules!") and procedural macros. Let's explore both types.
+Macros in Rust are powerful tools for `metaprogramming`, allowing you `to write code that writes code`.
 
-## Declarative Macros (macro_rules!)
+Rust has `two main types of macros`:
 
-Declarative macros allow you to write something similar to a match statement that operates on Rust syntax. They compare the input code against specific patterns and generate new code based on matches.
+1. `declarative macros` (aka "`macro_rules!`")
+2. `procedural macros`
+
+Let's explore both types.
+
+# 1. `Declarative Macros` (`macro_rules!`)
+
+`Declarative macros` allow you to write something similar to a match statement that operates on Rust syntax. They compare the input code against specific patterns and generate new code based on matches.
 
 ### Basic Syntax
 
@@ -150,11 +157,11 @@ fn main() {
 }
 ```
 
-## Procedural Macros
+# 2. `Procedural Macros`
 
-Procedural macros are more powerful than declarative macros. They operate on Rust's abstract syntax tree (AST) directly and can perform more complex transformations. They're defined in their own crates with the `proc-macro` crate type.
+`Procedural macros` are more powerful than declarative macros. They `operate on Rust's abstract syntax tree (AST) directly` and `can perform more complex transformations`. They're defined in their own crates with the `proc-macro` crate type.
 
-There are three types of procedural macros:
+There `are three types of procedural macros`:
 
 1. **Function-like macros**: Similar in usage to declarative macros
 2. **Derive macros**: Add functionality to structs and enums with `#[derive(MacroName)]`
@@ -213,7 +220,7 @@ let result = sql!("SELECT * FROM users");
 
 ### 2. Derive Macros
 
-Derive macros automatically implement traits for structs and enums:
+`Derive macros` automatically implement traits for structs and enums:
 
 ```rust
 use proc_macro::TokenStream;
@@ -252,7 +259,7 @@ struct Person {
 
 ### 3. Attribute Macros
 
-Attribute macros define new attributes:
+`Attribute macros` define new attributes:
 
 ```rust
 use proc_macro::TokenStream;
@@ -300,7 +307,7 @@ fn expensive_function() -> u32 {
 }
 ```
 
-## Advanced Topics in Macros
+# Advanced Topics in Macros
 
 ### Hygiene
 
@@ -329,7 +336,7 @@ cargo install cargo-expand
 cargo expand
 ```
 
-### Best Practices for Macros
+# Best Practices for Macros
 
 1. **Use macros sparingly**: Only use them when functions or traits won't work
 2. **Document behavior carefully**: Make sure users understand how to use the macro
@@ -337,7 +344,7 @@ cargo expand
 4. **Provide good error messages**: Use panic messages that explain what went wrong
 5. **Consider alternatives**: Can the same be achieved with a function, trait, or generic?
 
-## Real-World Examples
+# Real-World Examples
 
 ### The `vec!` Macro
 
@@ -359,7 +366,7 @@ let v = {
 };
 ```
 
-### Serde's Derive Macros
+### `Serde's Derive Macros`
 
 The popular Serde library uses procedural macros to automatically implement serialization and deserialization:
 
