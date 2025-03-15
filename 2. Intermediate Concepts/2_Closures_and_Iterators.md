@@ -4,13 +4,13 @@ Rust incorporates many functional programming concepts, with closures and iterat
 
 ## Closures
 
-Closures are anonymous functions that can capture their environment. They're extremely useful for creating inline functions and working with higher-order functions.
+`Closures` are **_anonymous functions that can capture their environment_**. They're extremely useful for **creating inline functions** and **working with higher-order functions**.
 
 ### Basic Syntax
 
 ```rust
 // Basic closure that takes two parameters
-let add = |x, y| x + y;
+let add = |x, y| x + y; // inline fn
 let result = add(5, 3); // 8
 
 // Closure with explicit type annotations
@@ -35,7 +35,7 @@ assert!(equal_to_x(y)); // true
 
 Rust closures can capture variables in three ways:
 
-1. **FnOnce**: Consumes the captured variables (takes ownership)
+1. **FnOnce**: Consumes the captured variables (**takes ownership**)
 2. **FnMut**: Borrows values mutably
 3. **Fn**: Borrows values immutably
 
