@@ -1,5 +1,6 @@
 
-// Only modify `assert_eq!` to make the `println!` work(print `42` in terminal)
+// Only modify `assert_eq!` to make the `println!` 
+// work(print `42` in terminal)
 fn main() {
     let x: i32 = 5;
     {
