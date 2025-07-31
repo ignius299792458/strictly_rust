@@ -7,7 +7,7 @@ fn main() {
     // Shadowing and re-binding
     let mut x = x; 
     x += 3;
-    println!("shadowed to x: {}", x);
+    println!("shadowed to earlier x=1 by: {}", x);
 
 
     let y = 4;

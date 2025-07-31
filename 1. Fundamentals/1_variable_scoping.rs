@@ -3,7 +3,7 @@
 fn main() {
     let x: i32 = 10;
     {
-        let y: i32 = 5;
+        let y: i32 = 5 + x;
         println!("Inner scope value of x is {} and value of y is {}", x, y);
     }
     println!("Outer scope value of x is {} and value of y: cannot be accessed.", x); 
