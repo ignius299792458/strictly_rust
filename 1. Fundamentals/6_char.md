@@ -1,4 +1,4 @@
-# `char` in Rust — Complete Guide
+# `char`
 
 ## 1. **What is a `char` in Rust?**
 
