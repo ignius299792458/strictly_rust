@@ -1,5 +1,5 @@
 # “Pointer is variable holding address of var, that address of var is reference, accessing value of that stored address of var is dereferencing”
--> **Your original intuition was half-right**
+-> **This intuition is half-right**
 That’s basically correct in **C terms**.
 > But in **Rust** (and C++), *reference* means something stricter: a **guaranteed-valid alias**, not just any address.
 
