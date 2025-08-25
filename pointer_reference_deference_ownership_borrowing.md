@@ -110,7 +110,16 @@ fn main() {
 
 📌 Borrowing enforces **no data races, no invalid memory access**.
 
----
+## Comparing C vs Rust
+
+| Concept     | **C**                                               | **Rust**                                       |
+| ----------- | --------------------------------------------------- | ---------------------------------------------- |
+| Pointer     | `int* p = &x;` → can be null, dangling              | `*const T`, `*mut T` (unsafe)                  |
+| Reference   | Doesn’t exist (use pointers instead)                | `&T`, `&mut T` (safe, always valid)            |
+| Dereference | `*p`                                                | `*r`                                           |
+| Ownership   | Manual (malloc/free)                                | Automatic (ownership rules)                    |
+| Borrowing   | Not enforced, you can alias mutable pointers freely | Compiler enforces (many readers OR one writer) |
+
 
 ## 🔑 Summary (Analogy: Book & Library)
 
