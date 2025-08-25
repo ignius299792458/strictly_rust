@@ -140,3 +140,131 @@ Analogy:
 * **Borrowing** (Rust) → temporarily using a value without owning it.
 
 ---
+
+---
+
+## 1️⃣ Variables and Memory
+
+```
+x: 42
++---------+
+|   42    |   <- value of x in memory
++---------+
+```
+
+---
+
+## 2️⃣ Reference (`&x`)
+
+```
+r = &x
++------+
+| addr | --------> +---------+
+|      |          |   42    | <- x
++------+
+```
+
+* `r` **holds the address of x**
+* Compiler enforces: `r` is immutable (cannot modify x through `r`)
+* Safe: cannot dangle, cannot alias mutable unsafely
+
+---
+
+## 3️⃣ Dereference (`*r`)
+
+```
+*r
+   |
+   v
++---------+
+|   42    | <- access value via reference
++---------+
+```
+
+* Dereferencing `r` follows the address to read the value.
+
+---
+
+## 4️⃣ Ownership
+
+```
+s = String::from("hello")   // s owns the string
++--------------------+
+| "hello"            |
++--------------------+
+^
+Ownership: s is responsible for cleanup
+```
+
+* When `s` goes out of scope, memory is freed automatically.
+
+---
+
+## 5️⃣ Borrowing (`&s` or `&mut s`)
+
+```
+r1 = &s   // immutable borrow
+r2 = &s   // another immutable borrow
+```
+
+```
+Immutable borrow rules: multiple allowed
++---------+   +---------+
+| "hello" |<--|   r1    |
++---------+   +---------+
+              |   r2    |
+              +---------+
+```
+
+```
+r3 = &mut s  // mutable borrow
+```
+
+```
+Mutable borrow rules: only one at a time
++---------+
+| "hello" |<-- r3
++---------+
+```
+
+* Borrowing = temporary use without ownership
+* Compiler enforces **no race conditions**
+
+---
+
+## 6️⃣ Full Chain (all together)
+
+```
+x: 42                 s: "hello"
++---------+           +----------------+
+|   42    |           | "hello"        |
++---------+           +----------------+
+    ^                     ^
+    |                     |
+    |                     |
+r = &x   (reference)      s owns the string
+*r   (dereference)        r1 = &s (borrow)
+                          r2 = &s (borrow)
+                          r3 = &mut s (mutable borrow, exclusive)
+```
+
+---
+
+### ✅ Summary of the Flow
+
+1. **Value** → the actual data in memory (`42`, `"hello"`)
+2. **Reference (`&`)** → safe handle pointing to the value
+3. **Dereference (`*`)** → access the value via reference/pointer
+4. **Pointer** → raw memory address (unsafe, like in C)
+5. **Ownership** → who is responsible for the value and cleanup
+6. **Borrowing** → temporarily using the value without taking ownership
+
+---
+
+“one-line chain” diagram** showing:
+
+```
+x -> &x -> *r -> ownership -> borrowing
+```
+
+
